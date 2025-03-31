@@ -8,13 +8,21 @@ plugins {
 
 publishing {
     publications {
-        maven(MavenPublication) {
+        bar(MavenPublication) {
             groupId = 'com.yadhu.exfab'
             artifactId = 'expandablefab'
             version = '1.0.0'
+            artifact("$buildDir/outputs/aar/expandablefab-release.aar")
+        }
+    }
 
-            afterEvaluate {
-                from components.release
+    repositories {
+        maven {
+            name="GitHubPackages"
+            url "https://maven.pkg.github.com/YadhuEkambaran/ExpandableFloatingActionButton"
+            credentials {
+                username = project.findProperty("gpr.usr") ?: System.getenv("GPR_USER")
+                password = project.findProperty("gpr.key") ?: System.getenv("GPR_API_KEY")
             }
         }
     }
