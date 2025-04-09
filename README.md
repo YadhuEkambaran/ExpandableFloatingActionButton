@@ -2,13 +2,14 @@
 This is a library for providing an expandable FloatingActionButton to Jetpack compose
 
 To integrate it to application
-
+```kotlin
 <dependency>
     <groupId>io.github.yadhuekambaran</groupId>
     <artifactId>expandablefab</artifactId>
     <version>1.0.0</version>
 </dependency>
 
+```
 
 This component supports three types of Expansion,
 
